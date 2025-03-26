@@ -8,7 +8,7 @@ export default function Add():JSX.Element{
     const edept:React.RefObject<HTMLInputElement|null>=useRef(null)
     const esal:React.RefObject<HTMLInputElement|null>=useRef(null)
 
-    function handleSubmit(eve: { preventDefault: () => void; }){
+    function handleSubmitt(eve: { preventDefault: () => void; }){
         eve.preventDefault();
         if(!eid.current || !ename.current||!edesig.current ||!edept.current || !esal.current){
             console.log('enter values')
@@ -21,7 +21,7 @@ export default function Add():JSX.Element{
         EmployeeObject.addEmployee(data)
     }
     return (<div style={{width:'100%',display:'flex',justifyContent:'center',marginTop:'3%'}}>
-        <form onSubmit={handleSubmit} style={{width:'auto',display:'flex',flexDirection:'column',alignItems:"center", gap:'10px'}}>
+        <form onSubmit={handleSubmitt} style={{width:'auto',display:'flex',flexDirection:'column',alignItems:"center", gap:'10px'}}>
             <input type='number' ref={eid} placeholder="Enter Id"></input>
             <input type='text' ref={ename} placeholder='Enter Name'></input>
             <input type='text' ref={edesig} placeholder='Enter Designation'></input>
